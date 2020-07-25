@@ -1,0 +1,74 @@
+<!--Utilizamos HTML como un motor de plantilla-->
+{% extends "layout.html" %}
+{% block body %}
+
+    <a href="/" class="btn btn-secondary">Volver</a>
+    <h1 class="text-white mt-3">Modifica los datos, Busca por codigo</h1>
+
+
+  <form action="{{url_for('modifica_libro')}}" method="POST">
+    <div class="input-group mb-5 mt-3">
+      <input type="text" class="form-control bg-white" name="codigo" placeholder="Codigo" autofocus>
+      <div class="input-group-append">
+          <button class="btn btn-primary" type="submit">Buscar</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="card card-body mx-auto" style="width: 50rem;">
+    <form action="/update/{{libros.0}}" method="POST" class="formingresa">
+      <div class="form-group">
+        <label for="codigo">Codigo</label>
+        <input type="text" class="form-control" id="codigo" name="codigo" value="{{libros.0}}">
+      </div>
+      <div class="row">
+        <div class="form-group col">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" value="{{libros.1}}">
+        </div>
+        <div class="form-group col">
+          <label for="categoria">Categoria</label>
+          <input type="text" class="form-control" id="categoria" name="categoria" value="{{libros.2}}">
+        </div>
+        <div class="form-group col">
+          <label for="autor">Autor</label>
+          <input type="text" class="form-control" id="autor" name="autor" value="{{libros.3}}">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col">
+          <label for="año">Año</label>
+          <input type="number" class="form-control" id="año" name="año" value="{{libros.4}}">
+        </div>
+        <div class="form-group col">
+          <label for="editorial">Editorial</label>
+          <input type="text" class="form-control" id="editorial" name="editorial" value="{{libros.5}}">
+        </div>
+        <div class="form-group col">
+          <label for="ciudad">Ciudad</label>
+          <input type="text" class="form-control" id="ciudad" name="ciudad" value="{{libros.6}}">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col">
+          <label for="cantidad">Cantidad</label>
+          <input type="number" class="form-control" id="cantidad" name="cantidad" value="{{libros.7}}">
+        </div>
+        <div class="form-group col">
+          <label for="precio_compra">Precio Compra</label>
+          <input type="number" class="form-control" id="precio_compra" name="precio_compra" value="{{libros.8}}">
+        </div>
+        <div class="form-group col">
+          <label for="precio_venta">Precio Venta</label>
+          <input type="number" class="form-control" id="precio_venta" name="precio_venta" value="{{libros.9}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">
+          Actualizar
+        </button>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}

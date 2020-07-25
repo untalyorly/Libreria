@@ -1,0 +1,58 @@
+<!--Utilizamos HTML como un motor de plantilla-->
+{% extends "layout.html" %}
+{% block body %}
+
+    <a href="/" class="btn btn-secondary">Volver</a>
+    <h1 class="text-white mt-3">Elimina datos, Busca por codigo</h1>
+
+    <form action="{{url_for('consula_libro_eliminar')}}" method="POST">
+        <div class="input-group mb-5 mt-3">
+            <input type="text" class="form-control bg-white" name="codigo" placeholder="Codigo" autofocus>
+            <div class="input-group-append">
+                <button class="btn btn-primary mr-5" type="submit">Buscar</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="">
+        <table class="table table-striped table-hover table-bordered table-sm bg-white">
+          <thead>
+            <tr>
+              <td>ID</td>
+              <td>Nombre</td>
+              <td>Categoria</td>
+              <td>Autor</td>
+              <td>Año</td>
+              <td>Editorial</td>
+              <td>Ciudad</td>
+              <td>Cantidad</td>
+              <td>Precio Compra</td>
+              <td>Precio Venta</td>
+              <td>Eliminar?</td>
+            </tr>
+          </thead>
+          <tbody class="my-tbody">
+            {% for libro in libros %}
+            <tr>
+              <td>{{libro.0}}</td>
+              <td>{{libro.1}}</td>
+              <td>{{libro.2}}</td>
+              <td>{{libro.3}}</td>
+              <td>{{libro.4}}</td>
+              <td>{{libro.5}}</td>
+              <td>{{libro.6}}</td>
+              <td>{{libro.7}}</td>
+              <td>{{libro.8}}</td>
+              <td>{{libro.9}}</td>
+              <td>
+                <a href="/delete/{{libro.0}}" class="btn btn-danger btn-delete">Borrar</a>
+              </td>
+            </tr>
+
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,56 @@
+<!--Utilizamos HTML como un motor de plantilla-->
+{% extends "layout.html" %}
+
+{% block body %}
+
+  <a href="/" class="btn btn-secondary">Volver</a>
+  <h1 class="text-white mt-3 mx-auto text-center" style="width: 40rem;">Ingresa Nuevos Libros: </h1>
+
+  <div class="card card-body mx-auto" style="width: 50rem;">
+      {% from "_macro.html" import render_filed %}
+      <form  id="formulario" method="POST" class="formingresa">
+          <div class="form-group">
+            {{ render_filed(form.codigo, class='form-control', placeholder="Ej.lb000", autofocus=true) }}
+          </div>
+          <div class="row">
+            <div class="form-group col">
+              {{ render_filed(form.nombre, class='form-control', placeholder="Ej.El valle") }}
+            </div>
+            <div class="form-group col">
+              {{ render_filed(form.categoria, class='form-control', placeholder="Ej.Romance") }}
+            </div>
+            <div class="form-group col">
+              {{ render_filed(form.autor, class='form-control', placeholder="Ej.Yorly A.") }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col">
+              {{ render_filed(form.anio, type="number", class='form-control', placeholder="Ej.2020") }}
+            </div>
+            <div class="form-group col">
+              {{ render_filed(form.editorial, class='form-control', placeholder="Ej.ULEAM") }}
+            </div>
+            <div class="form-group col">
+              {{ render_filed(form.ciudad, class='form-control', placeholder="Ej.Manta") }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col">
+              {{ render_filed(form.cantidad,type="number", class='form-control') }}
+            </div>
+            <div class="form-group col">
+              {{ render_filed(form.precio_compra, type="number",step="any", class='form-control') }}
+            </div>
+            <div class="form-group col">
+              {{ render_filed(form.precio_venta, type="number",step="any", class='form-control') }}
+            </div>
+          </div>
+          
+          <div class="">
+              <button id="guarda" class="btn btn-primary  btn-gurda" type="submit">Guardar</button>
+              <button class="btn btn-secondary limpia" >Nuevo</button>
+          </div>
+      </form>
+  </div>
+
+{% endblock %}
