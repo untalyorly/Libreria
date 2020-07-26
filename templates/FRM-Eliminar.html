@@ -3,25 +3,13 @@
 {% block body %}
 
     <a href="/" class="btn btn-secondary">Volver</a>
-    <h1 class="text-white mt-3">Buscar por:</h1>
+    <h1 class="text-white mt-3">Elimina datos, Busca por codigo</h1>
 
-    <form action="{{url_for('consula_libro')}}" method="POST">
+    <form action="{{url_for('consulta_libro_eliminar')}}" method="POST">
         <div class="input-group mb-5 mt-3">
             <input type="text" class="form-control bg-white" name="codigo" placeholder="Codigo" autofocus>
             <div class="input-group-append">
                 <button class="btn btn-primary mr-5" type="submit">Buscar</button>
-            </div>
-            <input type="text" class="form-control bg-white" name="nombre" placeholder="Nombre">
-            <div class="input-group-append">
-                <button class="btn btn-primary mr-5" type="submit">Buscar</button>
-            </div>
-            <input type="text" class="form-control bg-white" name="categoria" placeholder="Categoria">
-            <div class="input-group-append">
-                <button class="btn btn-primary mr-5" type="submit">Buscar</button>
-            </div>
-            <input type="text" class="form-control bg-white" name="autor" placeholder="Autor">
-            <div class="input-group-append">
-                <button class="btn btn-primary" type="submit">Buscar</button>
             </div>
         </div>
     </form>
@@ -40,6 +28,7 @@
               <td>Cantidad</td>
               <td>Precio Compra</td>
               <td>Precio Venta</td>
+              <td>Eliminar?</td>
             </tr>
           </thead>
           <tbody class="my-tbody">
@@ -55,6 +44,9 @@
               <td>{{libro.7}}</td>
               <td>{{libro.8}}</td>
               <td>{{libro.9}}</td>
+              <td>
+                <a href="/borrar/{{libro.0}}" class="btn btn-danger btn-delete">Borrar</a>
+              </td>
             </tr>
 
             {% endfor %}
