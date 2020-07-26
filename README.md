@@ -1,4 +1,4 @@
-
+# APLICACION WEB CON FLASK, INVENTARIO DE LIBROS
 # INSTALAR DEPENDENCIAS
 - pip install flask
 - pip install psycopg2
