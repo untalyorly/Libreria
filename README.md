@@ -1,5 +1,5 @@
 
-# iNSTALAR DEPENDENCIAS
+# INSTALAR DEPENDENCIAS
 - pip install flask
 - pip install psycopg2
 - pip install flask-wtf
