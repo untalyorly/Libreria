@@ -16,7 +16,7 @@ class inventario:
     # rutas
     #Ruta Inicio(menu)
     @app.route('/')
-    def Index():
+    def Menu():
         cur = conexion.cursor()
         cur.execute('SELECT * FROM tmovlibinv')#buscamos todos los datos de la tabla
         data = cur.fetchall()
