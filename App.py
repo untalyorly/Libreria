@@ -6,8 +6,8 @@ import formulario
 # Inicializamos
 app = Flask(__name__)
 # Estrablecemos conexion
-conexion = psycopg2.connect(dbname="ExGestionParragaMero",
-                            user="odoobd", password="odoobd", host="localhost", port="5432")
+conexion = psycopg2.connect(dbname="d7ort2krdktr8",
+                            user="ubqatqumfpxvoe", password="de4650e1c018a208792346b62f5bcc2b753e04ee4564c78accb48ce7faad986c", host="ec2-35-172-85-250.compute-1.amazonaws.com", port="5432")
 # configuracion
 app.secret_key = "mysecretkey"
 
