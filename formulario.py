@@ -40,15 +40,15 @@ class Contenido_formulario(Form):
     cantidad = IntegerField('Cantidad',
                 [
                     validators.Required(message='Campo Requerido'),
-                    validators.NumberRange(min=1, message='Error, numero no valido')
+                    validators.NumberRange(min=1, max=99999, message='Error, numero no valido')
                 ])
     precio_compra = DecimalField('Precio Compra',
                 [
                     validators.Required(message='Campo Requerido'),
-                    validators.NumberRange(min=1, message='Error, numero no valido')
+                    validators.NumberRange(min=1, max=99999, message='Error, numero no valido')
                 ])
     precio_venta = DecimalField('Precio Venta',
                 [
                     validators.Required(message='Campo Requerido'),
-                    validators.NumberRange(min=1, message='Error, numero no valido')
+                    validators.NumberRange(min=1, max=99999, message='Error, numero no valido')
                 ])
